@@ -1,18 +1,18 @@
 import { App, PluginSettingTab, Setting } from 'obsidian';
-import MyPlugin from './main';
+import RecursiveLinksSearch from './main';
 
-export interface MyPluginSettings {
+export interface RecursiveLinksSearchSettings {
 	mySetting: string;
 }
 
-export const DEFAULT_SETTINGS: MyPluginSettings = {
+export const DEFAULT_SETTINGS: RecursiveLinksSearchSettings = {
 	mySetting: 'default',
 };
 
 export class SampleSettingTab extends PluginSettingTab {
-	plugin: MyPlugin;
+	plugin: RecursiveLinksSearch;
 
-	constructor(app: App, plugin: MyPlugin) {
+	constructor(app: App, plugin: RecursiveLinksSearch) {
 		super(app, plugin);
 		this.plugin = plugin;
 	}
