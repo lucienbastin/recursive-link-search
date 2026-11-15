@@ -2,10 +2,12 @@ import { App, TFile, parseYaml } from 'obsidian';
 
 export class RelationsParser {
     private app: App;
+    private allowedProperties: Array<string>;
     public fileProperties: Map<string, Map<string, Array<string>>>;
 
-    constructor(app: App) {
+    constructor(app: App, allowedProperties: Array<string>) {
         this.app = app;
+        this.allowedProperties = allowedProperties;
         this.fileProperties = new Map();
     }
 
@@ -27,7 +29,7 @@ export class RelationsParser {
             if (frontmatter) {
                 let relations = new Map();
                 Object.entries(frontmatter).forEach(([key, value]) => {
-                    if (key == "lieu") {
+                    if (this.allowedProperties.includes(key)) {
                         let parents = [];
 
                         for (let i in value) {

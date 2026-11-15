@@ -1,8 +1,14 @@
-/*
-
-This CSS file will be included with your plugin, and
-available in the app when your plugin is enabled.
-
-If your plugin does not need CSS, delete this file.
-
-*/
+.my-search-view .my-suggestions {
+  position: relative;
+}
+.my-search-view .my-suggestion-item {
+  padding: 4px 8px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.my-search-view .my-suggestion-item:hover {
+  background-color: var(--background-modifier-hover);
+}
+.my-search-view .my-result-missing {
+  opacity: 0.5;
+}
